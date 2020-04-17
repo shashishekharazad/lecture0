@@ -1,9 +1,291 @@
+
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Web Page</title>
-    </head>
-    <body>
-        
-    </body>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style>
+
+        #mask {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 9000;
+            background-color: #26262c;
+            display: none;
+        }
+
+        #boxes .window {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1170px;
+            height: 850px;
+            display: none;
+            z-index: 9999;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        #boxes #dialog {
+            width: 1170px;
+            height: auto;
+            padding: 10px 10px 10px 10px;
+            background-color: #ffffff;
+            font-size: 15pt;
+        }
+
+        .agree:hover {
+            background-color: #D1D1D1;
+        }
+
+        .popupoption:hover {
+            background-color: #D1D1D1;
+            color: green;
+        }
+
+        .popupoption2:hover {
+            color: red;
+        }
+
+        .event-wrapper {
+            width: 1170px;
+            max-width: 100%;
+            background: url(/images/aarugya_bg.jpg) center top no-repeat;
+            background-size: cover;
+            display: inline-block;
+            box-sizing: border-box;
+            -mz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+
+        .event-item {
+            width: 50%;
+            color: #000000;
+            float: left; 
+            text-align: center;
+            border-right: 1px solid #fff;
+        }
+        .mshare-list .fb-icon {
+            background-color: #3b5998;
+        }
+        .app_btn_area {
+            width: 100%;
+            float: left;
+            margin-top: 0px;
+        }
+
+        .aap_lang {
+            color: #05496a;
+            font-family: 'Roboto';
+            padding: 15px 0 0;
+        }
+
+        a {
+            font-size: 100%;
+            vertical-align: baseline;
+            text-decoration: none;
+            outline: none;
+            color: #6c6c6c;
+        }
+
+        .container {
+            position: relative;
+            width: 1210px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .app_btn {
+            float: left;
+            margin-left:40px;
+            margin-top: 20px;
+            text-align: right;
+            padding-right: 10px;
+            color: #05496a;
+            font-family: 'Roboto';
+            font-weight: 700;
+        }
+
+        .pt {
+            padding-top: 5px;
+        }
+
+        .ln_cat {
+            font-size: 1rem;
+            color: #05496a;
+            padding: 17px 0;
+        }
+
+        .event-item span {
+            font-size: 1.429em;
+            display: block;
+            color: #05496a;
+            font-weight: 700;
+        }
+        .btnVolentere {
+            font-size: 0.9em !important;
+            display: block;
+            color: #05496a;
+            font-weight: bold;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            background: #fa7a19 !important;
+            border: none;
+            height: 60px !important;
+            vertical-align:central;
+        }
+        .event-item strong {
+            font-size: 2.08em;
+            display: block;
+            font-weight: 700;
+            color: #fa7a19;
+        }
+        .header {
+            font-size: 2.08em;
+            display: block;
+            font-weight: 700;
+            color: #fa7a19;
+        }
+        .event-item span {
+            font-size: 1.429em;
+            display: block;
+            color: #05496a;
+            font-weight: 700;
+        }
+
+        .mshare-list {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            justify-content: center;
+            padding-top: 15px;
+        }
+        ul {
+            list-style: none;
+        }
+            .mshare-list li {
+                margin-right: 10px;
+            }
+
+                .mshare-list li a {
+                    width: 40px;
+                    height: 40px;
+                    padding: 9px;
+                    background-color: #000;
+                    display: inline-block;
+                    border-radius: 50%;
+                }
+            .mshare-list .twitter-icon:hover {
+                background-color: #38a2f2;
+            }
+
+            .mshare-list .twitter-icon {
+                background-color: #55acee;
+            }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <div id="boxes">
+        <div style="top: 20px; left: 50%; display: none;" id="dialog" class="window">
+            <div id="san">
+               <span class="header">
+                <img src="/images/58310.jpg" class="pull-left"/>
+                
+                Board Of Technical Education <br />Uttar Pradesh</span>
+               <section class="event-wrapper">
+                   <div class="event-item">
+                       <img src="https://www.mygov.in/sites/all/themes/mygov/images/ar_app.png" alt="MyGov">
+                       <div class="aap_lang">An app that speaks your language</div>
+                       <div class="app_btn_area">
+
+                           <div class="app_btn" align="center">
+                               <a href="https://play.google.com/store/apps/details?id=nic.goi.aarogyasetu
+" target="_blank"><img src="https://www.mygov.in/sites/all/themes/mygov/images/gplay_icon.png" alt="Aarogya Setu on Play Store"></a>
+                           </div>
+                           <div class="app_btn" align="center">
+                               <a href="https://apps.apple.com/in/app/aarogyasetu/id1505825357 " target="_blank"> <img src="https://www.mygov.in/sites/all/themes/mygov/images/app_store_icon.png" alt="Aarogya Setu on App Store"></a>
+                           </div>
+                           <a href="/webapp/AarogyaSetuRegistration.aspx" class="app_btn btn btn-success btnVolentere" style="margin-top:10px">I WANT TO BE A VOLUNTEER, FOR THIS AAROGYA SETU APP</a>
+                       </div>
+
+                       
+                   </div>
+                   
+                   <div class="event-item pt">
+                       <img src="https://www.mygov.in/sites/all/themes/mygov/images/ar_qr.jpg" alt="qr code">
+                       <div class="ln_cat">Available in 11 different languages</div>
+                       <span>Scan to Download</span>
+                       <strong>Aarogya Setu </strong>
+                       <span>App for iOS and Android</span>
+                       <ul class="mshare-list">
+                           <li>
+                               <a href="https://twitter.com/share?url=https://www.mygov.in/aarogya-setu-app/?app=aarogya&amp;target=browser&amp;text=Scan or Click to Download AarogyaSetuApp for iOS and Android at" rel="noopener noreferrer" target="_blank" title="Aarogya-setu-app Twitter(External Site that opens in a new window)" class="twitter-icon ext">
+                                   <i class="fa fa-twitter" style="color:white"></i>
+                                   <span class="ext"><span class="element-invisible"> </span></span>
+                               </a>
+                           </li>
+                           <li>
+                               <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.mygov.in/aarogya-setu-app/?app=aarogya&amp;target=browser" rel="noopener noreferrer" target="_blank" title="Aarogya-setu-app Facebook(External Site that opens in a new window)" class="fb-icon ext">
+                                   <i class="fa fa-facebook" style="color:white"></i>
+                                   <span class="ext"><span class="element-invisible"> </span></span>
+                               </a>
+                           </li>
+                       </ul>
+                   </div>
+
+               </section>
+                
+            </div>
+        </div>
+        <div style="width: 2478px; font-size: 32pt; color:white; height: 1202px; display: none; opacity: 0.4;" id="mask"></div>
+    </div>
+
+
+
+
+    <script>
+        $(document).ready(function () {
+            var id = '#dialog';
+            var maskHeight = $(document).height();
+            var maskWidth = $(window).width();
+            $('#mask').css({ 'width': maskWidth, 'height': maskHeight });
+            $('#mask').fadeIn(500);
+            $('#mask').fadeTo("slow", 0.9);
+            var winH = $(window).height();
+            var winW = $(window).width();
+            //$(id).css('top', winH / 2 - $(id).height() / 2);
+            $(id).css('left', winW / 2 - $(id).width() / 2);
+            $(id).fadeIn(2000);
+            $('.window .close').click(function (e) {
+                e.preventDefault();
+                $('#mask').hide();
+                $('.window').hide();
+                window.location.href = 'http://bteup.ac.in/webapp/defaultnew.aspx'; 
+            });
+            $('#mask').click(function () {
+                $(this).hide();
+                $('.window').hide();
+                window.location.href = 'http://bteup.ac.in/webapp/defaultnew.aspx'; 
+            });
+
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+</body>
 </html>
